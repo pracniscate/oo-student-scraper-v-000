@@ -14,7 +14,8 @@ class Student
   end
 
   def add_student_attributes(attributes_hash)
-
+    attributes_hash.collect {|key, value| self.send(("#{key}="), value)}
+    self # return Student
   end
 
   def self.all
